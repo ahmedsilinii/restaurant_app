@@ -33,19 +33,19 @@ class _WalletWidgetState extends State<WalletWidget> {
                 children: [
                   Text(
                     '\$$amount',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 28.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 4.0),
-                  Icon(
+                  const SizedBox(width: 4.0),
+                  const Icon(
                     Icons.attach_money,
                     size: 18.0,
                   ),
                 ],
               ),
-              Text(
+              const Text(
                 'In Your Wallet',
                 style: TextStyle(
                   fontSize: 16.0,
@@ -54,12 +54,16 @@ class _WalletWidgetState extends State<WalletWidget> {
               ),
             ],
           ),
-          AddButtonWidget(
-            onAddPressed: () {
+          IconButton(
+            onPressed: () {
               setState(() {
-                amount += 100; // Increment the amount by 100 (for example)
+                amount += 1; // Increment the amount by 100 (for example)
               });
             },
+            icon: Icon(
+              Icons.add,
+              color: Colors.green, // Change icon color
+            ),
           ), // Stateful 'Add' button widget
         ],
       ),
@@ -79,15 +83,6 @@ class AddButtonWidget extends StatefulWidget {
 class _AddButtonWidgetState extends State<AddButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        widget.onAddPressed
-            ?.call(); // Call the function passed from parent widget
-      },
-      icon: Icon(
-        Icons.add,
-        color: Colors.green, // Change icon color
-      ),
-    );
+    return;
   }
 }
