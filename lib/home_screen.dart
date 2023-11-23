@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/carousel.dart';
 import 'package:restaurant_app/menu.dart';
 import 'package:restaurant_app/wallet.dart';
 
@@ -36,7 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             WalletWidget(),
-            MenuWidget(),
+            // CarouselWidget(
+            //   items: [
+            //     MenuWidget(),
+            //     MenuWidget(),
+            //   ],
+            // ),
           ],
         ),
       ),
