@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/menu.dart';
 import 'package:restaurant_app/qr_code.dart';
+import 'package:restaurant_app/rating.dart';
 import 'package:restaurant_app/wallet.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.person),
+          icon: const Icon(Icons.person),
           onPressed: () {},
         ),
         actions: [
@@ -40,10 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
             // CarouselWidget(
             //   items: [
             //     MenuWidget(),
-            //     MenuWidget(),
+            //     QRWidget(),
+            //
             //   ],
             // ),
-            QRWidget(),
+            RatingWidget(),
           ],
         ),
       ),

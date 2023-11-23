@@ -9,34 +9,40 @@ class QRWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       margin: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 172, 194, 214),
+        color: const Color.fromARGB(255, 144, 180, 242),
         borderRadius: BorderRadius.circular(12.0),
       ),
-      child: const Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const ListTile(
-              contentPadding: EdgeInsets.all(10),
-              title: Center(
-                child: Text(
-                  'Scan your QR Code',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24.0,
-                  ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const ListTile(
+            contentPadding: EdgeInsets.all(10),
+            title: Center(
+              child: Text(
+                'Scan your QR Code',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24.0,
                 ),
               ),
             ),
-            const SizedBox(height: 10),
-            Icon(
-              Icons.qr_code,
-              size: 96,
-              color: Colors.white,
+          ),
+          SizedBox(
+            height: 200.0,
+            width: 200.0,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                'assets/qr.png',
+                fit: BoxFit.cover,
+              ),
             ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
       ),
     );
   }

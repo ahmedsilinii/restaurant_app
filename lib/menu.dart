@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MenuWidget extends StatelessWidget {
-  const MenuWidget({Key? key});
+  const MenuWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class MenuWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       margin: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 172, 194, 214),
+        color: const Color.fromARGB(255, 144, 180, 242),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Column(
@@ -38,73 +38,24 @@ class MenuWidget extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 221, 235, 241),
-              borderRadius: BorderRadius.circular(12.0),
-            ),
-            child: ListTile(
-              leading: Icon(Icons.flatware_outlined),
-              title: Text(
-                'Salade tunisienne',
-                style: TextStyle(
-                  color: Colors.black, // Change text color to black
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 221, 235, 241),
-              borderRadius: BorderRadius.circular(12.0),
-            ),
-            child: ListTile(
-              leading: Icon(
-                Icons.flatware_outlined,
-              ),
-              title: Text(
-                'Salade tunisienne',
-                style: TextStyle(
-                  color: Colors.black, // Change text color to black
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 221, 235, 241),
-              borderRadius: BorderRadius.circular(12.0),
-            ),
-            child: ListTile(
-              leading: Icon(
-                Icons.flatware_outlined,
-              ),
-              title: Text(
-                'Salade tunisienne',
-                style: TextStyle(
-                  color: Colors.black, // Change text color to black
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
+          _buildMenuListItem('Salade tunisienne'),
+          const SizedBox(height: 20.0),
+          _buildMenuListItem('Salade tunisienne'),
+          const SizedBox(height: 20.0),
+          _buildMenuListItem('Salade tunisienne'),
+          const SizedBox(height: 20.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
+              const Icon(
                 Icons.thumb_up,
                 color: Colors.white,
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   'Rate today\'s menu',
                   style: TextStyle(
                     color: Colors.white,
@@ -116,6 +67,30 @@ class MenuWidget extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildMenuListItem(String title) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20.0),
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 219, 228, 249),
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
+        leading: const Icon(
+          Icons.flatware_outlined,
+          color: Color.fromARGB(255, 102, 135, 194),
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 102, 135, 194),
+            fontSize: 18.0,
+          ),
+        ),
       ),
     );
   }
