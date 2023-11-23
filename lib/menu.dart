@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MenuWidget extends StatelessWidget {
-  const MenuWidget({Key? key}) : super(key: key);
+  const MenuWidget({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,75 +12,110 @@ class MenuWidget extends StatelessWidget {
         color: const Color.fromARGB(255, 172, 194, 214),
         borderRadius: BorderRadius.circular(12.0),
       ),
-      child: Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ListTile(
-              contentPadding: const EdgeInsets.all(10),
-              iconColor: Colors.white,
-              leading: const Icon(Icons.restaurant_menu),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const ListTile(
+            contentPadding: EdgeInsets.all(10),
+            title: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.restaurant_menu,
+                    color: Colors.white,
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    'Today\'s Menu',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 221, 235, 241),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: ListTile(
+              leading: Icon(Icons.flatware_outlined),
               title: Text(
-                'Today\'s Menu',
+                'Salade tunisienne',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24.0,
+                  color: Colors.black, // Change text color to black
                 ),
               ),
             ),
-
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 221, 235, 241),
-                borderRadius: BorderRadius.circular(12.0),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 221, 235, 241),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: ListTile(
+              leading: Icon(
+                Icons.flatware_outlined,
               ),
-              child: ListTile(
-                leading: const Icon(Icons.flatware_outlined),
-                title: Text(
-                  'Salade tunisienne',
+              title: Text(
+                'Salade tunisienne',
+                style: TextStyle(
+                  color: Colors.black, // Change text color to black
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 221, 235, 241),
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: ListTile(
+              leading: Icon(
+                Icons.flatware_outlined,
+              ),
+              title: Text(
+                'Salade tunisienne',
+                style: TextStyle(
+                  color: Colors.black, // Change text color to black
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 20.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.thumb_up,
+                color: Colors.white,
+              ),
+              SizedBox(width: 5),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Rate today\'s menu',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    decoration: TextDecoration.underline,
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 221, 235, 241),
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: ListTile(
-                leading: const Icon(Icons.flatware_outlined),
-                title: Text(
-                  'Salade tunisienne',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 221, 235, 241),
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: ListTile(
-                leading: const Icon(Icons.flatware_outlined),
-                title: Text(
-                  'Salade tunisienne',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            // Add more menu items as needed
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }

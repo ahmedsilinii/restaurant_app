@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/menu.dart';
 
 class CarouselWidget extends StatelessWidget {
   final List<Widget> items;
