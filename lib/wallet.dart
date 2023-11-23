@@ -8,7 +8,7 @@ class WalletWidget extends StatefulWidget {
 }
 
 class _WalletWidgetState extends State<WalletWidget> {
-  int amount = 7; // Example amount, replace it with your data
+  int amount = 7;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,8 @@ class _WalletWidgetState extends State<WalletWidget> {
       padding: EdgeInsets.all(16.0),
       margin: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
+        color: Color.fromARGB(255, 172, 194, 214),
         borderRadius: BorderRadius.circular(12.0),
-        border: Border.all(
-          color: Colors.grey,
-          width: 1.0,
-        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -31,58 +28,52 @@ class _WalletWidgetState extends State<WalletWidget> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    '\$$amount',
-                    style: const TextStyle(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Text(
+                      '$amount',
+                      style: const TextStyle(
+                        fontSize: 36.0, // Increase font size
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white, // Set text color to white
+                      ),
                     ),
                   ),
-                  const SizedBox(width: 4.0),
                   const Icon(
-                    Icons.attach_money,
-                    size: 18.0,
+                    Icons.attach_money, // Use attach_money icon for currency
+                    size: 36.0, // Set the size of the currency icon
+                    color: Colors.white, // Set icon color to white
+                  ),
+                  const SizedBox(width: 8.0),
+                  const Text(
+                    'In Your Wallet',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white, // Set text color to white
+                    ),
                   ),
                 ],
               ),
-              const Text(
-                'In Your Wallet',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.grey,
-                ),
-              ),
             ],
           ),
-          IconButton(
-            onPressed: () {
-              setState(() {
-                amount += 1; // Increment the amount by 100 (for example)
-              });
-            },
-            icon: Icon(
-              Icons.add,
-              color: Colors.green, // Change icon color
+          Padding(
+            padding: const EdgeInsets.fromLTRB(50, 5, 5, 20),
+            child: IconButton(
+              onPressed: () {
+                setState(() {
+                  amount += 1; // Increment the amount by 1 (for example)
+                });
+              },
+              icon: const Icon(
+                Icons.add_rounded,
+                color: const Color.fromARGB(
+                    255, 255, 255, 255), // Change icon color
+                size: 20, // Set the size of the 'Add' icon
+              ),
             ),
-          ), // Stateful 'Add' button widget
+          ),
         ],
       ),
     );
-  }
-}
-
-class AddButtonWidget extends StatefulWidget {
-  final VoidCallback? onAddPressed;
-
-  const AddButtonWidget({Key? key, this.onAddPressed}) : super(key: key);
-
-  @override
-  _AddButtonWidgetState createState() => _AddButtonWidgetState();
-}
-
-class _AddButtonWidgetState extends State<AddButtonWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return;
   }
 }

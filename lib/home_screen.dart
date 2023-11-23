@@ -17,24 +17,23 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.account_circle),
+          icon: Icon(Icons.person),
           onPressed: () {},
         ),
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 16.0),
-            child: const CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Icon(
-                Icons.circle,
-                color: Colors.blue,
-              ),
+            child: const Icon(
+              Icons.circle,
+              color: Color.fromARGB(255, 3, 82, 146),
             ),
           ),
         ],
       ),
       body: const Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             WalletWidget(),
             MenuWidget(),
